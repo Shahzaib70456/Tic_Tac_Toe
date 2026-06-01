@@ -1,0 +1,45 @@
+.start-page-container {
+    background: rgb(34, 6, 56);
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    height: 95vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: None;
+    margin: 0;
+    isolation: isolate;
+    position: relative;
+     background-color: rgba(34, 6, 56, 0.8);
+}
+
+.start-page-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('public/Tic_tac_toe_Logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.start-button {
+    margin: 5px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #646cff;
+    border: None;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.start-button:hover {
+    background-color: #323ad1;
+    font-size: 1rem
+}
