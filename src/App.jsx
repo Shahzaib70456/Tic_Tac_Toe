@@ -10,6 +10,10 @@ function Square({ value, onSquareClick, className }) {
 }
 
 function Board({ xIsNext, squares, onPlay, history }) {
+
+  const count = [0, 1, 2];
+  const count2 = [0, 1, 2];
+
   function handleClick(i) {
     if (calculateWinner(squares) || squares.values[i]) {
       return;
@@ -36,25 +40,25 @@ function Board({ xIsNext, squares, onPlay, history }) {
   }
 
   return (
-    <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square className = {squares.classNames[0]} value={squares.values[0]} onSquareClick={() => handleClick(0)} />
-        <Square className = {squares.classNames[1]} value={squares.values[1]} onSquareClick={() => handleClick(1)} />
-        <Square className = {squares.classNames[2]} value={squares.values[2]} onSquareClick={() => handleClick(2)} />
+  <>
+    <div className="status">{status}</div>
+    {count.map((row) => (
+      <div className="board-row" key={row}>
+        {count2.map((col) => {
+          const index = col + row * 3;
+          return (
+            <Square 
+              className={squares.classNames[index]}
+              value={squares.values[index]}
+              onSquareClick={() => handleClick(index)}
+              key={index}
+            />
+          );
+        })}
       </div>
-      <div className="board-row">
-        <Square className = {squares.classNames[3]} value={squares.values[3]} onSquareClick={() => handleClick(3)} />
-        <Square className = {squares.classNames[4]} value={squares.values[4]} onSquareClick={() => handleClick(4)} />
-        <Square className = {squares.classNames[5]} value={squares.values[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square className = {squares.classNames[6]} value={squares.values[6]} onSquareClick={() => handleClick(6)} />
-        <Square className = {squares.classNames[7]} value={squares.values[7]} onSquareClick={() => handleClick(7)} />
-        <Square className = {squares.classNames[8]} value={squares.values[8]} onSquareClick={() => handleClick(8)} />
-      </div>
-    </>
-  );
+    ))}
+  </>
+);
 }
 
 export default function Game({ handleStart }) {

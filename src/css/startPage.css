@@ -19,7 +19,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('public/Tic_tac_toe_Logo.svg');
+    background-image: url('Tic_tac_toe_Logo.svg');
     background-repeat: no-repeat;
     background-position: center;
 

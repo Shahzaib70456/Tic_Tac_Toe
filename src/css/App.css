@@ -79,6 +79,8 @@
   flex-direction: row;
   list-style: none;
   padding-left: 0;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   quote {
     margin: 5px;
@@ -92,8 +94,8 @@
 }
 
 .move {
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   background-color: white;
   border: 2px solid black;
   display: flex;
